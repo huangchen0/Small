@@ -18,6 +18,7 @@ public class AppContext extends Application {
     public void onCreate() {
         super.onCreate();
         Log.d(TAG, "onCreate()");
+        Log.d(TAG,"Application AppContext" + this);
 
         // Test shared data
         Log.d(TAG, this.getSharedPreferences("small.app-versions", 0).getAll().toString());

@@ -1,13 +1,10 @@
 package net.wequick.example.small;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.drawable.ColorDrawable;
-import android.view.View;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import net.wequick.small.Small;
 import net.wequick.small.webkit.WebView;
@@ -17,6 +14,7 @@ import net.wequick.small.webkit.WebViewClient;
  * Created by galen on 15/11/3.
  */
 public class Application extends android.app.Application {
+    private final String TAG = this.getClass().getSimpleName();
 
     public Application() {
         // This should be the very first of the application lifecycle.
@@ -28,7 +26,7 @@ public class Application extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        Log.d(TAG,"Application app" + this);
         // Optional
         Small.setBaseUri("http://code.wequick.net/small-sample/");
         Small.setWebViewClient(new MyWebViewClient());
